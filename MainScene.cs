@@ -35,21 +35,32 @@ public class MainScene : Spatial
 
         _timer = new Timer();
         AddChild(_timer);
-        _timer.WaitTime = 0.5f;
+        _timer.WaitTime = 3f;
         _timer.OneShot = true;
         _timer.Connect("timeout", this, nameof(TestTimerTimeout));
     }
 
     void TestTimerTimeout()
     {
-        _animationPlayer.Play(_animationPlayer.AssignedAnimation);
         GD.Print("\"Loading complete\"");
 
-        LoadUIComponents();
+        try
+        {
+            LoadUIComponents();
+
+            _animationPlayer.Play(_animationPlayer.AssignedAnimation);
+        }
+        catch (Exception ex)
+        {
+            _animationPlayer.Play("ErrorAnimation");
+            GetNode<Label>("MenuLayer/WelcomeLabel").Text = "Error";
+            GD.Print("Error while loading UI");
+        }
     }
 
     void LoadUIComponents()
     {
+        throw new Exception("some error");
         MainUI mainUI = _mainUIScene.Instance<MainUI>();
 
         for (int i = 0; i < 20; i++)
@@ -74,7 +85,10 @@ public class MainScene : Spatial
 
     void OnAnimationFinished(string animationName)
     {
-        GetNode<Label>("MenuLayer/WelcomeLabel").QueueFree();
+        if (animationName == "WelcomeAnimation")
+        {
+            GetNode<Label>("MenuLayer/WelcomeLabel").QueueFree();
+        }
     }
 
     //  // Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -13,7 +13,6 @@ void fragment()
 	ALBEDO.r = BaseColor[0] + (-VERTEX.y) * ColorFactor[0];
 	ALBEDO.g = BaseColor[1] + VERTEX.x * ColorFactor[1];
 	ALBEDO.b = BaseColor[2] + VERTEX.y * ColorFactor[2];
- 	
 }
 
 void vertex()

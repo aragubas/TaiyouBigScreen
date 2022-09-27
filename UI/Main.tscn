@@ -1,11 +1,11 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://UI/ClickableIcon/ClickableIcon.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UI/MainUI.cs" type="Script" id=2]
 [ext_resource path="res://UI/Main_UIAppletBG.tres" type="StyleBox" id=3]
 
 [sub_resource type="StyleBoxFlat" id=13]
-bg_color = Color( 0.0980392, 0.0980392, 0.0980392, 0.0941176 )
+bg_color = Color( 0.0980392, 0.0980392, 0.0980392, 0.0313726 )
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
@@ -37,6 +37,16 @@ HScrollBar/styles/grabber_pressed = SubResource( 7 )
 HScrollBar/styles/scroll = SubResource( 8 )
 HScrollBar/styles/scroll_focus = SubResource( 9 )
 
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0.0980392, 0.0980392, 0.0980392, 0.0313726 )
+border_width_left = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 0.0705882 )
+border_blend = true
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
 [sub_resource type="DynamicFontData" id=11]
 font_path = "res://Assets/Ubuntu.ttf"
 
@@ -57,6 +67,26 @@ tracks/0/keys = {
 "points": PoolRealArray( 0, -0.25, 0, 0.165267, -0.0168092, 1, -0.171154, -0.0384336, 0.25, 0 ),
 "times": PoolRealArray( 0, 0.6 )
 }
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:rect_scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0.5, -0.25, 0, 0.2, -0.297649, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.6 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath(".:rect_scale:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0.5, -0.25, 0, 0.2, -0.271442, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.6 )
+}
 
 [sub_resource type="Animation" id=4]
 length = 0.001
@@ -69,6 +99,26 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0.001 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:rect_scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath(".:rect_scale:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
 }
 
 [node name="Main" type="Control"]
@@ -137,7 +187,7 @@ anchor_right = 0.984
 anchor_bottom = 0.973
 focus_neighbour_top = NodePath("../MainArea")
 focus_neighbour_bottom = NodePath("../TopArea")
-custom_styles/panel = ExtResource( 3 )
+custom_styles/panel = SubResource( 14 )
 
 [node name="AppletTitle" type="Label" parent="UIApplet"]
 anchor_right = 1.0
