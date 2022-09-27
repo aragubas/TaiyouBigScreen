@@ -313,7 +313,7 @@ tracks/11/keys = {
 font_path = "res://Assets/Ubuntu-Th.ttf"
 
 [sub_resource type="DynamicFont" id=14]
-size = 64
+size = 84
 font_data = SubResource( 13 )
 
 [node name="Scene" type="Spatial"]
@@ -377,4 +377,5 @@ modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = 5.0
+mouse_filter = 2
 color = Color( 0, 0, 0, 1 )

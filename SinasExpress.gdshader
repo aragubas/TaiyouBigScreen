@@ -3,8 +3,8 @@ render_mode cull_disabled;
 
 uniform float WaveDensity = 1.25;
 uniform float Speed = 2.0; 
-uniform vec3 BaseColor = vec3(0.4, 0.7, 1.69); // Base color
-const vec3 ColorFactor = vec3(0.0025, 0.025, 0.05); // How much the desired axis will affect color
+uniform lowp vec3 BaseColor = vec3(0.4, 0.7, 1.69); // Base color
+const lowp vec3 ColorFactor = vec3(0.0025, 0.025, 0.05); // How much the desired axis will affect color
 
 void fragment()
 {

@@ -35,7 +35,5 @@ icon = ExtResource( 1 )
 flat = false
 script = ExtResource( 4 )
 
-[node name="Tween" type="Tween" parent="."]
-
 [node name="SelectSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
