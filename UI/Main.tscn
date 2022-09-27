@@ -94,11 +94,6 @@ focus_neighbour_top = NodePath("../UIApplet")
 focus_neighbour_bottom = NodePath("../MainArea")
 custom_styles/panel = ExtResource( 3 )
 
-[node name="Button" type="Button" parent="TopArea"]
-margin_right = 12.0
-margin_bottom = 20.0
-text = "asdfasdf"
-
 [node name="MainArea" type="Panel" parent="."]
 anchor_left = 0.016
 anchor_top = 0.255
@@ -144,29 +139,24 @@ focus_neighbour_top = NodePath("../MainArea")
 focus_neighbour_bottom = NodePath("../TopArea")
 custom_styles/panel = ExtResource( 3 )
 
+[node name="AppletTitle" type="Label" parent="UIApplet"]
+anchor_right = 1.0
+anchor_bottom = 0.1
+custom_fonts/font = SubResource( 12 )
+text = "<applet_title>"
+align = 1
+
 [node name="VBoxContainer" type="MarginContainer" parent="UIApplet"]
+anchor_top = 0.1
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 6.0
 margin_right = -6.0
 margin_bottom = -6.0
 
-[node name="AppletTitle" type="Label" parent="UIApplet/VBoxContainer"]
-margin_top = 152.0
-margin_right = 971.0
-margin_bottom = 180.0
-custom_fonts/font = SubResource( 12 )
-text = "<applet_title>"
-align = 1
-
 [node name="Applet" type="MarginContainer" parent="UIApplet/VBoxContainer"]
 margin_right = 971.0
-margin_bottom = 333.0
-
-[node name="Button" type="Button" parent="UIApplet/VBoxContainer/Applet"]
-margin_right = 971.0
-margin_bottom = 333.0
-text = "asdfasdf"
+margin_bottom = 299.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/In = SubResource( 3 )
