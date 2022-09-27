@@ -60,7 +60,7 @@ public class MainScene : Spatial
 
     void LoadUIComponents()
     {
-        throw new Exception("some error");
+        //throw new Exception("some error");
         MainUI mainUI = _mainUIScene.Instance<MainUI>();
 
         for (int i = 0; i < 20; i++)
