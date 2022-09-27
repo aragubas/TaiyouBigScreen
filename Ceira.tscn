@@ -313,7 +313,7 @@ tracks/11/keys = {
 font_path = "res://Assets/Ubuntu-Th.ttf"
 
 [sub_resource type="DynamicFont" id=14]
-size = 84
+size = 72
 font_data = SubResource( 13 )
 
 [node name="Scene" type="Spatial"]

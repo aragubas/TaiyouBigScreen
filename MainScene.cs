@@ -35,7 +35,7 @@ public class MainScene : Spatial
 
         _timer = new Timer();
         AddChild(_timer);
-        _timer.WaitTime = 2;
+        _timer.WaitTime = 0.5f;
         _timer.OneShot = true;
         _timer.Connect("timeout", this, nameof(TestTimerTimeout));
     }
@@ -44,6 +44,20 @@ public class MainScene : Spatial
     {
         _animationPlayer.Play(_animationPlayer.AssignedAnimation);
         GD.Print("\"Loading complete\"");
+
+        LoadUIComponents();
+    }
+
+    void LoadUIComponents()
+    {
+        MainUI mainUI = _mainUIScene.Instance<MainUI>();
+
+        for (int i = 0; i < 20; i++)
+        {
+            mainUI.MenuItems.Add(new Ceira.Classes.MenuItem() { Title = Guid.NewGuid().ToString() });
+        }
+
+        GetNode<CanvasLayer>("MenuLayer").AddChild(mainUI);
     }
 
     void LoadMenuTriggered(bool triggerValue)
@@ -61,10 +75,6 @@ public class MainScene : Spatial
     void OnAnimationFinished(string animationName)
     {
         GetNode<Label>("MenuLayer/WelcomeLabel").QueueFree();
-
-        MainUI mainUI = _mainUIScene.Instance<MainUI>();
-
-        GetNode<CanvasLayer>("MenuLayer").AddChild(mainUI);
     }
 
     //  // Called every frame. 'delta' is the elapsed time since the previous frame.

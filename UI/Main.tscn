@@ -1,7 +1,18 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://UI/ClickableIcon/ClickableIcon.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UI/MainUI.cs" type="Script" id=2]
+[ext_resource path="res://UI/Main_UIAppletBG.tres" type="StyleBox" id=3]
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.0980392, 0.0980392, 0.0980392, 0.0941176 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_color = Color( 0, 0, 0, 0.0705882 )
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
 
 [sub_resource type="StyleBoxEmpty" id=5]
 
@@ -25,6 +36,13 @@ HScrollBar/styles/grabber_highlight = SubResource( 6 )
 HScrollBar/styles/grabber_pressed = SubResource( 7 )
 HScrollBar/styles/scroll = SubResource( 8 )
 HScrollBar/styles/scroll_focus = SubResource( 9 )
+
+[sub_resource type="DynamicFontData" id=11]
+font_path = "res://Assets/Ubuntu.ttf"
+
+[sub_resource type="DynamicFont" id=12]
+size = 24
+font_data = SubResource( 11 )
 
 [sub_resource type="Animation" id=3]
 resource_name = "In"
@@ -63,10 +81,43 @@ margin_bottom = -4.0
 rect_pivot_offset = Vector2( 508, 296 )
 script = ExtResource( 2 )
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
-anchor_top = 0.25
-anchor_right = 1.0
+[node name="TopArea" type="Panel" parent="."]
+anchor_left = 0.016
+anchor_top = 0.027
+anchor_right = 0.984
+anchor_bottom = 0.223
+margin_left = -0.256001
+margin_top = 0.0159998
+margin_right = 0.255981
+margin_bottom = -0.0160065
+focus_neighbour_top = NodePath("../UIApplet")
+focus_neighbour_bottom = NodePath("../MainArea")
+custom_styles/panel = ExtResource( 3 )
+
+[node name="Button" type="Button" parent="TopArea"]
+margin_right = 12.0
+margin_bottom = 20.0
+text = "asdfasdf"
+
+[node name="MainArea" type="Panel" parent="."]
+anchor_left = 0.016
+anchor_top = 0.255
+anchor_right = 0.984
 anchor_bottom = 0.4
+rect_clip_content = true
+focus_neighbour_top = NodePath("../TopArea")
+focus_neighbour_bottom = NodePath("../UIApplet")
+custom_styles/panel = SubResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MainArea"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 6.0
+margin_top = 6.0
+margin_right = -6.0
 rect_clip_content = false
 theme = SubResource( 10 )
 follow_focus = true
@@ -75,58 +126,47 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
-margin_right = 1899.0
-margin_bottom = 80.0
+[node name="HBoxContainer" type="HBoxContainer" parent="MainArea/ScrollContainer"]
+margin_right = 191.0
+margin_bottom = 76.0
 custom_constants/separation = 18
 
-[node name="Button" parent="ScrollContainer/HBoxContainer" instance=ExtResource( 1 )]
-margin_right = 195.0
-margin_bottom = 80.0
+[node name="Button" parent="MainArea/ScrollContainer/HBoxContainer" instance=ExtResource( 1 )]
+margin_right = 191.0
+margin_bottom = 76.0
 
-[node name="Button2" parent="ScrollContainer/HBoxContainer" instance=ExtResource( 1 )]
-margin_left = 213.0
-margin_right = 408.0
-margin_bottom = 80.0
+[node name="UIApplet" type="Panel" parent="."]
+anchor_left = 0.016
+anchor_top = 0.4
+anchor_right = 0.984
+anchor_bottom = 0.973
+focus_neighbour_top = NodePath("../MainArea")
+focus_neighbour_bottom = NodePath("../TopArea")
+custom_styles/panel = ExtResource( 3 )
 
-[node name="Button3" parent="ScrollContainer/HBoxContainer" instance=ExtResource( 1 )]
-margin_left = 426.0
-margin_right = 621.0
-margin_bottom = 80.0
+[node name="VBoxContainer" type="MarginContainer" parent="UIApplet"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 6.0
+margin_right = -6.0
+margin_bottom = -6.0
 
-[node name="Button4" parent="ScrollContainer/HBoxContainer" instance=ExtResource( 1 )]
-margin_left = 639.0
-margin_right = 834.0
-margin_bottom = 80.0
+[node name="AppletTitle" type="Label" parent="UIApplet/VBoxContainer"]
+margin_top = 152.0
+margin_right = 971.0
+margin_bottom = 180.0
+custom_fonts/font = SubResource( 12 )
+text = "<applet_title>"
+align = 1
 
-[node name="Button5" parent="ScrollContainer/HBoxContainer" instance=ExtResource( 1 )]
-margin_left = 852.0
-margin_right = 1047.0
-margin_bottom = 80.0
+[node name="Applet" type="MarginContainer" parent="UIApplet/VBoxContainer"]
+margin_right = 971.0
+margin_bottom = 333.0
 
-[node name="Button6" parent="ScrollContainer/HBoxContainer" instance=ExtResource( 1 )]
-margin_left = 1065.0
-margin_right = 1260.0
-margin_bottom = 80.0
-
-[node name="Button7" parent="ScrollContainer/HBoxContainer" instance=ExtResource( 1 )]
-margin_left = 1278.0
-margin_right = 1473.0
-margin_bottom = 80.0
-
-[node name="Button8" parent="ScrollContainer/HBoxContainer" instance=ExtResource( 1 )]
-margin_left = 1491.0
-margin_right = 1686.0
-margin_bottom = 80.0
-
-[node name="Button9" parent="ScrollContainer/HBoxContainer" instance=ExtResource( 1 )]
-margin_left = 1704.0
-margin_right = 1899.0
-margin_bottom = 80.0
-
-[node name="MarginContainer" type="MarginContainer" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="Button" type="Button" parent="UIApplet/VBoxContainer/Applet"]
+margin_right = 971.0
+margin_bottom = 333.0
+text = "asdfasdf"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/In = SubResource( 3 )
