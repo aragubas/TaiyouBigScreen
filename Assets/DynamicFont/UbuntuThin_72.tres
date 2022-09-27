@@ -1,0 +1,10 @@
+[gd_resource type="DynamicFont" load_steps=2 format=2]
+
+[sub_resource type="DynamicFontData" id=13]
+font_path = "res://Assets/Ubuntu-Th.ttf"
+
+[resource]
+size = 72
+outline_size = 1
+outline_color = Color( 0, 0, 0, 0.14902 )
+font_data = SubResource( 13 )

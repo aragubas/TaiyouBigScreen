@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://UI/ClickableIcon/ClickableIcon.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UI/MainUI.cs" type="Script" id=2]
 [ext_resource path="res://UI/Main_UIAppletBG.tres" type="StyleBox" id=3]
+[ext_resource path="res://Assets/UITheme.tres" type="Theme" id=4]
 
 [sub_resource type="StyleBoxFlat" id=13]
 bg_color = Color( 0.0980392, 0.0980392, 0.0980392, 0.0313726 )
@@ -13,6 +14,8 @@ border_color = Color( 0, 0, 0, 0.0705882 )
 border_blend = true
 corner_radius_top_left = 8
 corner_radius_top_right = 8
+shadow_color = Color( 0, 0, 0, 0.0313726 )
+shadow_size = 2
 
 [sub_resource type="StyleBoxEmpty" id=5]
 
@@ -46,6 +49,8 @@ border_color = Color( 0, 0, 0, 0.0705882 )
 border_blend = true
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
+shadow_color = Color( 0, 0, 0, 0.0313726 )
+shadow_size = 2
 
 [sub_resource type="DynamicFontData" id=11]
 font_path = "res://Assets/Ubuntu.ttf"
@@ -129,6 +134,7 @@ margin_top = 4.0
 margin_right = -4.0
 margin_bottom = -4.0
 rect_pivot_offset = Vector2( 508, 296 )
+theme = ExtResource( 4 )
 script = ExtResource( 2 )
 
 [node name="TopArea" type="Panel" parent="."]
@@ -172,12 +178,12 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MainArea/ScrollContainer"]
-margin_right = 191.0
+margin_right = 169.0
 margin_bottom = 76.0
 custom_constants/separation = 18
 
 [node name="Button" parent="MainArea/ScrollContainer/HBoxContainer" instance=ExtResource( 1 )]
-margin_right = 191.0
+margin_right = 169.0
 margin_bottom = 76.0
 
 [node name="UIApplet" type="Panel" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://SinasShaderBack.gdshader" type="Shader" id=1]
 [ext_resource path="res://MainScene.cs" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Assets/Sound/Intro.wav" type="AudioStream" id=4]
 [ext_resource path="res://Objects/Trigger.tscn" type="PackedScene" id=5]
 [ext_resource path="res://BackwaveEnvironment.tres" type="Environment" id=6]
+[ext_resource path="res://Assets/DynamicFont/UbuntuThin_72.tres" type="DynamicFont" id=7]
 
 [sub_resource type="World" id=5]
 environment = ExtResource( 6 )
@@ -456,13 +457,6 @@ tracks/13/keys = {
 "times": PoolRealArray( 0, 1, 5, 6 )
 }
 
-[sub_resource type="DynamicFontData" id=13]
-font_path = "res://Assets/Ubuntu-Th.ttf"
-
-[sub_resource type="DynamicFont" id=14]
-size = 72
-font_data = SubResource( 13 )
-
 [node name="Scene" type="Spatial"]
 script = ExtResource( 2 )
 
@@ -517,7 +511,7 @@ anchor_top = 0.2
 anchor_right = 0.537
 anchor_bottom = 0.2
 rect_pivot_offset = Vector2( 145.5, 41 )
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = ExtResource( 7 )
 text = "Welcome"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
