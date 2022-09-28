@@ -12,6 +12,9 @@ public class MainScene : Spatial
     Trigger _loadMenuTrigger;
     Timer _timer;
 
+    [Export]
+    public bool SkipIntro = false;
+
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
@@ -22,22 +25,28 @@ public class MainScene : Spatial
         _loadMenuTrigger = GetNode<Trigger>("LoadMenuTrigger");
 
         _loadMenuTrigger.Connect("triggered", this, nameof(LoadMenuTriggered));
-
         _animationPlayer.Connect("animation_finished", this, nameof(OnAnimationFinished));
         //_animationPlayer.Connect("animation_started", this, nameof(OnAnimationStarted));
-        _animationPlayer.Play("WelcomeAnimation");
 
-        //GetNode<Label>("CanvasLayer/WelcomeLabel").QueueFree();
+        if (SkipIntro)
+        {
+            GetNode<Label>("MenuLayer/WelcomeLabel").QueueFree();
+            LoadUIComponents();
+        }
+        else
+        {
+            _animationPlayer.Play("WelcomeAnimation");
+            
+            // Loading test timer
+            _timer = new Timer();
+            AddChild(_timer);
+            _timer.WaitTime = 3f;
+            _timer.OneShot = true;
+            _timer.Connect("timeout", this, nameof(TestTimerTimeout));
 
-        //MainUI mainUI = _mainUIScene.Instance<MainUI>();
+        }
 
-        //GetNode<CanvasLayer>("CanvasLayer").AddChild(mainUI);
 
-        _timer = new Timer();
-        AddChild(_timer);
-        _timer.WaitTime = 3f;
-        _timer.OneShot = true;
-        _timer.Connect("timeout", this, nameof(TestTimerTimeout));
     }
 
     void TestTimerTimeout()
@@ -63,7 +72,10 @@ public class MainScene : Spatial
         //throw new Exception("some error");
         MainUI mainUI = _mainUIScene.Instance<MainUI>();
 
-        for (int i = 0; i < 20; i++)
+        // Add default items
+        mainUI.MenuItems.Add(new Ceira.Classes.MenuItem() { Title = "Home" });
+        mainUI.MenuItems.Add(new Ceira.Classes.MenuItem() { Title = "Settings" });
+        for (int i = 0; i < 18; i++)
         {
             mainUI.MenuItems.Add(new Ceira.Classes.MenuItem() { Title = Guid.NewGuid().ToString() });
         }
@@ -87,7 +99,12 @@ public class MainScene : Spatial
     {
         if (animationName == "WelcomeAnimation")
         {
-            GetNode<Label>("MenuLayer/WelcomeLabel").QueueFree();
+            Label welcomeLabel = GetNode<Label>("MenuLayer/WelcomeLabel");
+            if (welcomeLabel != null)
+            {
+                welcomeLabel.QueueFree();
+            }
+
         }
     }
 

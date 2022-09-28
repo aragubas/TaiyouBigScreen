@@ -7,6 +7,7 @@
 [node name="ClickableIcon" type="ToolButton"]
 margin_right = 12.0
 margin_bottom = 20.0
+rect_rotation = 0.131868
 text = "Placeholder"
 icon = ExtResource( 1 )
 flat = false
