@@ -10,17 +10,26 @@ config_version=4
 
 [application]
 
-config/name="Ceira"
+config/name="TaiyouBigScreen"
 run/main_scene="res://Ceira.tscn"
 boot_splash/show_image=false
 boot_splash/use_filter=false
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://icon.png"
 
+[autoload]
+
+MainSingleton="*res://MainSingleton.cs"
+
 [display]
 
 window/dpi/allow_hidpi=true
+mouse_cursor/custom_image="res://Assets/Cursor/normal.png"
 window/stretch/aspect="keep"
+
+[editor]
+
+scene_naming=1
 
 [gui]
 
@@ -28,6 +37,10 @@ common/drop_mouse_on_gui_input_disabled=true
 theme/use_hidpi=true
 theme/custom="res://Assets/UITheme.tres"
 theme/custom_font="res://Assets/DynamicFont/Inter_16.tres"
+
+[mono]
+
+project/assembly_name="TaiyouBigScreen"
 
 [rendering]
 

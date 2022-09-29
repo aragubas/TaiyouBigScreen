@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using UIAppletAPI;
 
 public class MainScene : Spatial
 {
@@ -73,11 +74,11 @@ public class MainScene : Spatial
         MainUI mainUI = _mainUIScene.Instance<MainUI>();
 
         // Add default items
-        mainUI.MenuItems.Add(new Ceira.Classes.MenuItem() { Title = "Home" });
-        mainUI.MenuItems.Add(new Ceira.Classes.MenuItem() { Title = "Settings" });
+        mainUI.MenuItems.Add(new MenuItem() { Title = "Home" });
+        mainUI.MenuItems.Add(new MenuItem() { Title = "Settings" });
         for (int i = 0; i < 18; i++)
         {
-            mainUI.MenuItems.Add(new Ceira.Classes.MenuItem() { Title = Guid.NewGuid().ToString() });
+            mainUI.MenuItems.Add(new MenuItem() { Title = Guid.NewGuid().ToString() });
         }
 
         GetNode<CanvasLayer>("MenuLayer").AddChild(mainUI);

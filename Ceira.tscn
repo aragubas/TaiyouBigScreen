@@ -459,7 +459,6 @@ tracks/13/keys = {
 
 [node name="Scene" type="Spatial"]
 script = ExtResource( 2 )
-SkipIntro = true
 
 [node name="LoadMenuTrigger" parent="." instance=ExtResource( 5 )]
 

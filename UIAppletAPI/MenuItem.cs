@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ceira.Classes
+namespace UIAppletAPI
 {
     public class MenuItem
     {
-        public string Title { get; set; }
-
+        public string Title;
     }
 }
