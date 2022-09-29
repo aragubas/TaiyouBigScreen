@@ -39,8 +39,6 @@ public class MainSingleton : Node
         // Read config file
         //
         ReadConfigFile(ConfigFilePath);
-
-
     }
 
     void ReadConfigFile(string configFilePath)

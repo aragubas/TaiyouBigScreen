@@ -2,10 +2,16 @@
 
 [resource]
 background_mode = 1
-tonemap_mode = 3
-tonemap_exposure = 0.71
+tonemap_exposure = 0.7
 glow_enabled = true
 glow_levels/3 = false
+glow_levels/4 = true
+glow_levels/5 = false
+glow_levels/6 = true
 glow_levels/7 = true
+glow_intensity = 0.76
+glow_strength = 0.99
 glow_blend_mode = 3
+glow_hdr_scale = 4.0
+glow_bicubic_upscale = true
 adjustment_saturation = 0.85

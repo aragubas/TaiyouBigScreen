@@ -12,6 +12,9 @@ public class MainScene : Spatial
     AudioStreamPlayer _introSound;
     Trigger _loadMenuTrigger;
     Timer _timer;
+    int _lastTargetFPS = 0;
+    WorldEnvironment _worldEnvironment;
+    Viewport _backwaveViewport;
 
     [Export]
     public bool SkipIntro = false;
@@ -24,6 +27,8 @@ public class MainScene : Spatial
         _animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
         _introSound = GetNode<AudioStreamPlayer>("IntroSound");
         _loadMenuTrigger = GetNode<Trigger>("LoadMenuTrigger");
+        _worldEnvironment = GetNode<WorldEnvironment>("WorldEnvironment");
+        _backwaveViewport = GetNode<Viewport>("Viewport");
 
         _loadMenuTrigger.Connect("triggered", this, nameof(LoadMenuTriggered));
         _animationPlayer.Connect("animation_finished", this, nameof(OnAnimationFinished));
@@ -47,7 +52,40 @@ public class MainScene : Spatial
 
         }
 
+        // Adds support for glow in GLES 2
+        if (OS.GetCurrentVideoDriver() == OS.VideoDriver.Gles2)
+        {
+            _worldEnvironment.Environment.GlowHdrThreshold = 0.9f;
+            _worldEnvironment.Environment.GlowIntensity = 1.5f;
+            _worldEnvironment.Environment.GlowStrength = 1.3f;
+            //_worldEnvironment.Environment.GlowBlendMode = Godot.Environment.GlowBlendModeEnum.Softlight;
 
+
+            _backwaveViewport.World.Environment.GlowHdrThreshold = 0.9f;
+            _backwaveViewport.World.Environment.GlowIntensity = 1.4f;
+            _backwaveViewport.World.Environment.GlowStrength = 1.3f;
+            _backwaveViewport.World.Environment.GlowLevels__4 = false;
+            _backwaveViewport.Size = new Vector2(512, 512);
+        }
+
+    }
+
+    public override void _Notification(int what)
+    {
+        if (what == NotificationWmFocusOut)
+        {
+            Visible = false;
+            Engine.TargetFps = 10;
+            GetTree().Paused = true;
+        }
+
+        if (what == NotificationWmFocusIn)
+        {
+            GetTree().Paused = false;
+            Visible = true;
+            Engine.TargetFps = 0;
+
+        }
     }
 
     void TestTimerTimeout()

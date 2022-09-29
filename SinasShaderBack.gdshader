@@ -12,12 +12,12 @@ void fragment()
 	// Set the color	
 	ALBEDO.r = BaseColor[0] * GlowFactor[0] + VERTEX.y * ColorFactor[0];
 	ALBEDO.g = BaseColor[1] * GlowFactor[1] - (VERTEX.z * ColorFactor[1]);
-	ALBEDO.b = BaseColor[2] * GlowFactor[2] + (VERTEX.y * ColorFactor[2]) * (NORMAL.y * 0.05);
+	ALBEDO.b = BaseColor[2] * GlowFactor[2] + (VERTEX.y * ColorFactor[2]);
 }
  
 void vertex()
 {
-	lowp float val = cos(VERTEX.x * WaveDensity - TIME / Speed);
+	lowp float val = sin(VERTEX.x * WaveDensity - (TIME) / Speed);
 
 	VERTEX.y = val;
 }

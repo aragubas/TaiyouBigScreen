@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://SinasShaderBack.gdshader" type="Shader" id=1]
 [ext_resource path="res://MainScene.cs" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Objects/Trigger.tscn" type="PackedScene" id=5]
 [ext_resource path="res://BackwaveEnvironment.tres" type="Environment" id=6]
 [ext_resource path="res://Assets/DynamicFont/UbuntuThin_72.tres" type="DynamicFont" id=7]
+[ext_resource path="res://default_env.tres" type="Environment" id=8]
 
 [sub_resource type="World" id=5]
 environment = ExtResource( 6 )
@@ -20,7 +21,7 @@ shader_param/BaseColor = Vector3( 0.25, 0.25, 1.69 )
 [sub_resource type="PlaneMesh" id=6]
 material = SubResource( 10 )
 size = Vector2( 2.5, 1 )
-subdivide_width = 2
+subdivide_width = 1
 
 [sub_resource type="ViewportTexture" id=7]
 viewport_path = NodePath("Viewport")
@@ -33,7 +34,7 @@ albedo_texture = SubResource( 7 )
 [sub_resource type="QuadMesh" id=9]
 resource_local_to_scene = true
 material = SubResource( 8 )
-size = Vector2( 25, 18 )
+size = Vector2( 20, 18 )
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 3 )
@@ -86,8 +87,8 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"points": PoolRealArray( 1.5, -0.25, 0, 0.25, 0, 1.69, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 5 )
+"points": PoolRealArray( 1.2, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 6 )
 }
 tracks/4/type = "bezier"
 tracks/4/path = NodePath("Viewport/BackWave:mesh:material:shader_param/BaseColor:y")
@@ -96,8 +97,8 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"points": PoolRealArray( 1.068, -0.25, 0, 0.25, 0, 0.8, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 5 )
+"points": PoolRealArray( 1.068, -0.25, 0, 0.25, 0, 0.4, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 6.3 )
 }
 tracks/5/type = "bezier"
 tracks/5/path = NodePath("Viewport/BackWave:mesh:material:shader_param/BaseColor:z")
@@ -106,8 +107,8 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"points": PoolRealArray( 1.812, -0.25, 0, 0.25, 0, 0.8, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 5 )
+"points": PoolRealArray( 1.812, -0.25, 0, 0.25, 0, 0.4, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 6.6 )
 }
 tracks/6/type = "bezier"
 tracks/6/path = NodePath("FrontWave:mesh:material:shader_param/BaseColor:x")
@@ -116,8 +117,8 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"points": PoolRealArray( 0.9, -0.25, 0, 0.25, 0, 1.34, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 5 )
+"points": PoolRealArray( 0.6, -0.25, 0, 0.25, 0, 1.69, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 6 )
 }
 tracks/7/type = "bezier"
 tracks/7/path = NodePath("FrontWave:mesh:material:shader_param/BaseColor:y")
@@ -126,8 +127,8 @@ tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"points": PoolRealArray( 0.997, -0.25, 0, 0.25, 0, 0.8, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 5 )
+"points": PoolRealArray( 0.8, -0.25, 0, 0.25, 0, 0.3, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 6.3 )
 }
 tracks/8/type = "bezier"
 tracks/8/path = NodePath("FrontWave:mesh:material:shader_param/BaseColor:z")
@@ -136,8 +137,8 @@ tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"points": PoolRealArray( 1.559, -0.25, 0, 0.25, 0, 0.8, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 5 )
+"points": PoolRealArray( 2.063, -0.25, 0, 0.25, 0, 0.25, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 6.6 )
 }
 tracks/9/type = "bezier"
 tracks/9/path = NodePath("MenuLayer/WelcomeLabel:rect_scale:x")
@@ -311,7 +312,7 @@ tracks/13/keys = {
 
 [sub_resource type="Animation" id=12]
 resource_name = "WelcomeAnimation"
-length = 8.0
+length = 12.0
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("FrontWave:mesh:material:shader_param/WaveDensity")
 tracks/0/interp = 1
@@ -319,7 +320,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"points": PoolRealArray( -0.973814, -0.25, 0, 3.5, 1.69546, 0.8, -2, 0, 0.25, 0 ),
+"points": PoolRealArray( 0.1, -0.25, 0, 2.4, 0.157594, 0.8, -1.5, -0.00150412, 0.25, 0 ),
 "times": PoolRealArray( 0, 5 )
 }
 tracks/1/type = "bezier"
@@ -329,7 +330,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"points": PoolRealArray( -1.9, -0.25, 0, 0.5, -5.89999, -2, -4, 0, 0, 0 ),
+"points": PoolRealArray( -0.05, -0.25, 0, 3.3, -1.39027, -2, -1.6, -0.00664639, 0, 0 ),
 "times": PoolRealArray( 0, 5 )
 }
 tracks/2/type = "bezier"
@@ -349,8 +350,8 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0, 3.11231, 1.5, -0.25, 0, 0.25, 0, 0.25, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 5, 8 )
+"points": PoolRealArray( 0, -0.25, 0, 0, 3.11231, 1.2, -0.25, 0, 0.25, 0, 0.25, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 5, 12 )
 }
 tracks/4/type = "bezier"
 tracks/4/path = NodePath("Viewport/BackWave:mesh:material:shader_param/BaseColor:y")
@@ -360,7 +361,7 @@ tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
 "points": PoolRealArray( 0, -0.25, 0, 0, 3.08715, 0.25, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 8 )
+"times": PoolRealArray( 0, 12 )
 }
 tracks/5/type = "bezier"
 tracks/5/path = NodePath("Viewport/BackWave:mesh:material:shader_param/BaseColor:z")
@@ -370,7 +371,7 @@ tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
 "points": PoolRealArray( 0.25, -0.25, 0, 0.1, 2.18303, 1.69, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 8 )
+"times": PoolRealArray( 0, 12 )
 }
 tracks/6/type = "bezier"
 tracks/6/path = NodePath("FrontWave:mesh:material:shader_param/BaseColor:x")
@@ -379,8 +380,8 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 2.2, 1.33865, 0.9, -0.25, 0, 0.25, 0, 0.4, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 5, 8 )
+"points": PoolRealArray( 0.1, -0.25, 0, 2.2, 1.33865, 0.6, -0.25, 0, 0.25, 0, 0.45, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 5, 12 )
 }
 tracks/7/type = "bezier"
 tracks/7/path = NodePath("FrontWave:mesh:material:shader_param/BaseColor:y")
@@ -389,8 +390,8 @@ tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 1.3, 1.7915, 0.7, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 8 )
+"points": PoolRealArray( 0.1, -0.25, 0, 1.3, 1.7915, 0.8, -0.25, 0, 0.25, 0, 0.69, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 5, 12 )
 }
 tracks/8/type = "bezier"
 tracks/8/path = NodePath("FrontWave:mesh:material:shader_param/BaseColor:z")
@@ -400,7 +401,7 @@ tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
 "points": PoolRealArray( 1.25, -0.25, 0, 2.5, 1.52892, 1.69, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 8 )
+"times": PoolRealArray( 0, 12 )
 }
 tracks/9/type = "value"
 tracks/9/path = NodePath("IntroSound:playing")
@@ -523,3 +524,6 @@ anchor_bottom = 1.0
 margin_right = 5.0
 mouse_filter = 2
 color = Color( 0, 0, 0, 1 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 8 )

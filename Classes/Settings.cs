@@ -18,7 +18,8 @@ namespace Ceira.Classes
 
         public void LoadDefaultSettings()
         {
-            Fullscreen = true;
+            Fullscreen = false;
+
         }
     }
 }
