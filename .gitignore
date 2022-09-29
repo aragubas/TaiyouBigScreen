@@ -364,3 +364,4 @@ FodyWeavers.xsd
 
 .import/
 .mono/
+.conf/

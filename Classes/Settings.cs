@@ -12,5 +12,13 @@ namespace Ceira.Classes
         [JsonProperty("fullscreen")]
         public bool Fullscreen { get; set; }
 
+        [JsonIgnore]
+        public bool FirstTime { get; set; }
+
+
+        public void LoadDefaultSettings()
+        {
+            Fullscreen = true;
+        }
     }
 }

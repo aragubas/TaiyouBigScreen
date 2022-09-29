@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ceira", "Ceira.csproj", "{3DD5FFCE-5F0D-4E4F-8C6B-44D07B5CFA68}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaiyouBigScreen", "TaiyouBigScreen.csproj", "{A6E9BC8F-9F39-4BDF-B37D-A1A97A656BEF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIAppletAPI", "UIAppletAPI\UIAppletAPI.csproj", "{DCE6A87F-0119-420C-A42A-991E8F965059}"
 EndProject
@@ -15,14 +15,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3DD5FFCE-5F0D-4E4F-8C6B-44D07B5CFA68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3DD5FFCE-5F0D-4E4F-8C6B-44D07B5CFA68}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3DD5FFCE-5F0D-4E4F-8C6B-44D07B5CFA68}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
-		{3DD5FFCE-5F0D-4E4F-8C6B-44D07B5CFA68}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
-		{3DD5FFCE-5F0D-4E4F-8C6B-44D07B5CFA68}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
-		{3DD5FFCE-5F0D-4E4F-8C6B-44D07B5CFA68}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
-		{3DD5FFCE-5F0D-4E4F-8C6B-44D07B5CFA68}.Release|Any CPU.ActiveCfg = ExportRelease|Any CPU
-		{3DD5FFCE-5F0D-4E4F-8C6B-44D07B5CFA68}.Release|Any CPU.Build.0 = ExportRelease|Any CPU
+		{A6E9BC8F-9F39-4BDF-B37D-A1A97A656BEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6E9BC8F-9F39-4BDF-B37D-A1A97A656BEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6E9BC8F-9F39-4BDF-B37D-A1A97A656BEF}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{A6E9BC8F-9F39-4BDF-B37D-A1A97A656BEF}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{A6E9BC8F-9F39-4BDF-B37D-A1A97A656BEF}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{A6E9BC8F-9F39-4BDF-B37D-A1A97A656BEF}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+		{A6E9BC8F-9F39-4BDF-B37D-A1A97A656BEF}.Release|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{A6E9BC8F-9F39-4BDF-B37D-A1A97A656BEF}.Release|Any CPU.Build.0 = ExportRelease|Any CPU
 		{DCE6A87F-0119-420C-A42A-991E8F965059}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DCE6A87F-0119-420C-A42A-991E8F965059}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCE6A87F-0119-420C-A42A-991E8F965059}.ExportDebug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -36,6 +36,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {9241E7E0-EBD2-4873-B666-64C2C29F4083}
+		SolutionGuid = {5B9F6A1A-9595-4FF7-AED6-4F22D6D6080B}
 	EndGlobalSection
 EndGlobal
